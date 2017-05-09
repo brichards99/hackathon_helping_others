@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($http) {
+  /* widget controller */
+  var c = this;
+	
+	c.registerMe = function(sys_id) {
+		console.log("Registered!");
+		var url = 'https://hackathon012.service-now.com/api/now/table/x_snc_charitable_e_attendee';
+		$http.post(url, {
+			attendee: c.data.userId,
+			event: sys_id
+		}).success(function(){
+			console.log("Added!");
+			alert("Registered!");				
+		});
+		
+		
+	}
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>hr {
+  border-color: #3a3f51; 
+}
+
+button {
+ margin-top: 5px; 
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>help_calendar</id>
+        <internal>false</internal>
+        <link/>
+        <name>help calendar</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.events = [];
+	
+	data.userId = gs.getUserID();
+	
+	var event = new GlideRecord('x_snc_charitable_e_charitable_event');
+	event.addEncodedQuery('start_date>=javascript:gs.daysAgoStart(0)');
+	event.query();
+	
+	while (event.next()){
+		
+		var date_time= event.start_date;
+		var date= date_time.split(' ')[0];
+		var time=date_time.split(' ')[1];
+		var gd = new GlideDate();
+		gd.setValue(date);
+		date=gd.getByFormat('dd/MM/yyyy');
+		date_time=date+' '+time;
+		
+		var tempEvent = {
+			sys_id : event.sys_id + '',
+			name : event.name + '',
+			type : event.event_type.getDisplayValue(),
+			event_logo : event.event_logo.getDisplayValue(),
+			start_date: date_time,
+			end_date : event.end_date.getDisplayValue(),
+			description : event.u_string_1.getDisplayValue()			
+		};
+		
+		data.events.push(tempEvent);
+	}
+	
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-09 18:36:01</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>37d76fbe4f22b6004677bd728110c742</sys_id>
+        <sys_mod_count>48</sys_mod_count>
+        <sys_name>help calendar</sys_name>
+        <sys_package display_value="Charitable Events" source="x_snc_charitable_e">ac82b2fe4fae760057364beab110c72b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Charitable Events">ac82b2fe4fae760057364beab110c72b</sys_scope>
+        <sys_update_name>sp_widget_37d76fbe4f22b6004677bd728110c742</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-09 21:05:51</sys_updated_on>
+        <template><![CDATA[<div id="event-list">
+  <!-- your widget template -->
+  <div ng-repeat="event in c.data.events">
+    <div class="row">
+      <div class="col-md-3">
+        <img ng-src="{{ event.event_logo }}" width="100px">
+      </div>
+      <div class="col-md-8">
+        <div>
+          <h3>
+            {{ event.name }}
+          </h3>
+        </div>
+        <div>
+          <div>
+            <span class="event-subheader">
+              Type: {{ event.type }}<br/>
+              Date and Time: {{ event.start_date }}<br/>  
+              Description:<br/> {{ event.description }}
+            </span>   
+          </div>
+          <div>
+
+
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-md-1">
+        <button class="btn btn-primary" ng-click="c.registerMe(event.sys_id)" >
+          Register
+        </button>
+        <button class="btn btn-primary" >
+          Tell a friend!
+        </button>
+      </div>
+      
+    </div>
+    <hr />
+
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

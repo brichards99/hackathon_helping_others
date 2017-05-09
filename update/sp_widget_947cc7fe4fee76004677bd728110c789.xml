@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.row {&#13;
+    padding-bottom: 0em;&#13;
+}&#13;
+.white {&#13;
+    background-color: #fff;&#13;
+}&#13;
+&#13;
+.row {&#13;
+    margin-right: -15px;&#13;
+    margin-left: -15px;&#13;
+}&#13;
+&#13;
+.red {&#13;
+    background-color: #900;&#13;
+}&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>help-header</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-09 16:38:06</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>947cc7fe4fee76004677bd728110c789</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>help-header</sys_name>
+        <sys_package display_value="Charitable Events" source="x_snc_charitable_e">ac82b2fe4fae760057364beab110c72b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Charitable Events">ac82b2fe4fae760057364beab110c72b</sys_scope>
+        <sys_update_name>sp_widget_947cc7fe4fee76004677bd728110c789</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-09 21:06:10</sys_updated_on>
+        <template><![CDATA[<div class="row white">
+	<div class="col-xs-6 col-md-6">
+		<img class="img-responsive" src="charity_hands.jpg" style="margin: 5px 0px 0px 5px; width: 100%; max-width:90%"/>
+	</div>
+  <img class="img-responsive" src="givenow.png" align=right style="width: 400px;"/>
+	<div class="col-xs-6 col-md-6">
+
+</div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

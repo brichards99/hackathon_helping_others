@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,color</field_list>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>Event News</name>
+        <option_schema>[{"name":"max_number","label":"Max number","type":"integer"},{"displayValue":"Knowledge Category","name":"kb_category","label":"KB category","type":"reference","value":"kb_category","ed":{"reference":"kb_category"}}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[var t = data;
+var z = new GlideRecord('kb_knowledge');
+var kbCat = options.kb_category || "0a86f3cbff0221009b20ffffffffff81";
+z.addQuery('kb_category', kbCat);
+z.addQuery('workflow_state', 'published');
+z.orderByDesc('published');
+z.setLimit(options.max_number || 5);
+z.query();
+t.rowCount = z.getRowCount();
+t.articles = [];
+
+while (z.next()) {
+  var a = {};
+  a.short_description = z.getValue('short_description');
+  a.sys_view_count = z.getValue('sys_view_count');
+  a.sys_id = z.getValue('sys_id');
+  a.published = z.getValue('published');
+  a.published_display = gs.getMessage("Published {0}", z.getDisplayValue('published'));
+  t.articles.push(a);
+}
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-09 19:58:21</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>c2ba3f7a4f62b6004677bd728110c724</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>Event News</sys_name>
+        <sys_package display_value="Charitable Events" source="x_snc_charitable_e">ac82b2fe4fae760057364beab110c72b</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Charitable Events">ac82b2fe4fae760057364beab110c72b</sys_scope>
+        <sys_update_name>sp_widget_c2ba3f7a4f62b6004677bd728110c724</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-09 21:07:28</sys_updated_on>
+        <template><![CDATA[<div ng-if="data.articles.length > 0" class="panel panel-{{::options.color}} b">
+  <div class="panel-heading" style="background-color: #93117e;">
+    <h4 class="panel-title" style="color: #FFFFFF; font-weight: bold;">{{options.title}}</h4>
+  </div>
+
+  <div class="panel-body">
+    <div ng-repeat="a in data.articles" style="margin-bottom: 1em;">
+      <a href="?id=kb_article&sys_id={{::a.sys_id}}" style="color: #93117e; font-weight: bold;">{{::a.short_description}}</a>
+      <div>
+        <span title="{{::a.published_display}}">
+          <sn-day-ago date="a.published"/>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

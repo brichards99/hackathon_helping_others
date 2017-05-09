@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Charitable Event" max_length="40" name="x_snc_charitable_e_charitable_event" type="collection">
+        <element label="City" max_length="40" name="city" type="string"/>
+        <element label="End Date" max_length="40" name="end_date" type="glide_date_time"/>
+        <element attributes="pdf_cell_type=image" label="Event Logo" max_length="40" name="event_logo" type="user_image"/>
+        <element choice="3" default="Time" label="Event Type" mandatory="true" max_length="40" name="event_type" type="choice">
+            <choice>
+                <element label="Athletics" sequence="0" value="Athletics"/>
+                <element label="Donation" sequence="1" value="Donation"/>
+                <element label="Fundraising" sequence="2" value="Fundraising"/>
+                <element label="Give Your Time" sequence="3" value="Time"/>
+                <element label="Other" sequence="4" value="Other"/>
+            </choice>
+        </element>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="Point of Contact" max_length="32" name="point_of_contact" reference="sys_user" type="reference"/>
+        <element label="Result Count" max_length="20" name="result_count" type="integer"/>
+        <element choice="3" default="Dollars" label="Result Type" max_length="40" name="result_type" type="choice">
+            <choice>
+                <element label="Dollars donated" value="Dollars  donated"/>
+                <element label="Hours donated" value="Hours donated"/>
+                <element label="Items donated" value="Items donated"/>
+            </choice>
+        </element>
+        <element label="Sponsor" max_length="32" name="sponsor" reference="core_company" type="reference"/>
+        <element label="Start Date" max_length="40" name="start_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="400" name="u_string_1" type="string"/>
+        <index name="index">
+            <element name="sponsor"/>
+        </index>
+        <index name="index2">
+            <element name="point_of_contact"/>
+        </index>
+    </element>
+</database>

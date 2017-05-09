@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="attendee" max_length="40" name="x_snc_charitable_e_attendee" type="collection">
+        <element label="attendee" max_length="32" name="attendee" reference="sys_user" type="reference"/>
+        <element label="event" max_length="32" name="event" reference="x_snc_charitable_e_charitable_event" type="reference"/>
+        <index name="index">
+            <element name="attendee"/>
+        </index>
+        <index name="index2">
+            <element name="event"/>
+        </index>
+    </element>
+</database>

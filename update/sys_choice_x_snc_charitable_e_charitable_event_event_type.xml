@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="event_type" table="x_snc_charitable_e_charitable_event" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>event_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Athletics</label>
+            <language>en</language>
+            <name>x_snc_charitable_e_charitable_event</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 15:01:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7fd676764f22b60057364beab110c7ff</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 15:01:56</sys_updated_on>
+            <value>Athletics</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>event_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Donation</label>
+            <language>en</language>
+            <name>x_snc_charitable_e_charitable_event</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 15:01:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fbd6b6764f22b60057364beab110c700</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 15:01:56</sys_updated_on>
+            <value>Donation</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>event_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Fundraising</label>
+            <language>en</language>
+            <name>x_snc_charitable_e_charitable_event</name>
+            <sequence>2</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 15:01:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>77d6b6764f22b60057364beab110c701</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 15:01:56</sys_updated_on>
+            <value>Fundraising</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>event_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Give Your Time</label>
+            <language>en</language>
+            <name>x_snc_charitable_e_charitable_event</name>
+            <sequence>3</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 15:01:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ffd6b6764f22b60057364beab110c701</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 15:01:56</sys_updated_on>
+            <value>Time</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>event_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other</label>
+            <language>en</language>
+            <name>x_snc_charitable_e_charitable_event</name>
+            <sequence>4</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 15:01:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f7d6b6764f22b60057364beab110c71b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 15:01:56</sys_updated_on>
+            <value>Other</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>event_type</element>
+            <name>x_snc_charitable_e_charitable_event</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-09 15:01:56</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>b7d6b6764f22b60057364beab110c700</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>event_type</sys_name>
+            <sys_package display_value="Charitable Events" source="x_snc_charitable_e">ac82b2fe4fae760057364beab110c72b</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Charitable Events">ac82b2fe4fae760057364beab110c72b</sys_scope>
+            <sys_update_name>sys_choice_x_snc_charitable_e_charitable_event_event_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-09 15:01:56</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>
